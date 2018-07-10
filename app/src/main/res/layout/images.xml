@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:layout_weight="1"
-            android:src="@drawable/question_mark" />
+            android:src="@drawable/world" />
 
         <ImageView
             android:id="@+id/questionImageView12"
@@ -26,21 +26,21 @@
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:layout_weight="1"
-            android:src="@drawable/question_mark" />
+            android:src="@drawable/world" />
         <ImageView
             android:id="@+id/questionImageView13"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:layout_weight="1"
-            android:src="@drawable/question_mark" />
+            android:src="@drawable/world" />
         <ImageView
             android:id="@+id/questionImageView14"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:layout_weight="1"
-            android:src="@drawable/question_mark" />
+            android:src="@drawable/world" />
 
     </LinearLayout>
 
@@ -57,7 +57,7 @@
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:layout_weight="1"
-            android:src="@drawable/question_mark" />
+            android:src="@drawable/world" />
 
         <ImageView
             android:id="@+id/questionImageView22"
@@ -65,21 +65,21 @@
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:layout_weight="1"
-            android:src="@drawable/question_mark" />
+            android:src="@drawable/world" />
         <ImageView
             android:id="@+id/questionImageView23"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:layout_weight="1"
-            android:src="@drawable/question_mark" />
+            android:src="@drawable/world" />
         <ImageView
             android:id="@+id/questionImageView24"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:layout_weight="1"
-            android:src="@drawable/question_mark" />
+            android:src="@drawable/world" />
 
     </LinearLayout>
 
@@ -96,7 +96,7 @@
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:layout_weight="1"
-            android:src="@drawable/question_mark" />
+            android:src="@drawable/world" />
 
         <ImageView
             android:id="@+id/questionImageView32"
@@ -104,21 +104,21 @@
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:layout_weight="1"
-            android:src="@drawable/question_mark" />
+            android:src="@drawable/world" />
         <ImageView
             android:id="@+id/questionImageView33"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:layout_weight="1"
-            android:src="@drawable/question_mark" />
+            android:src="@drawable/world" />
         <ImageView
             android:id="@+id/questionImageView34"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:layout_weight="1"
-            android:src="@drawable/question_mark" />
+            android:src="@drawable/world" />
 
     </LinearLayout>
 
