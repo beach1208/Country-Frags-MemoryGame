@@ -1,8 +1,8 @@
 package com.example.nagi.memorygame;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
@@ -11,13 +11,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class MainActivity extends AppCompatActivity {
+public class Level3Activity extends AppCompatActivity {
 
     TextView textViewp1,timer_View;
     ImageView questionImage11,questionImage12,questionImage13,questionImage14,
@@ -42,7 +41,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.level_3);
+
+        Intent intent = getIntent();
+        String value = intent.getStringExtra("Move");
 
         textViewp1 = findViewById(R.id.tv_p1);
         timer_View = findViewById(R.id.timer_View);
@@ -56,28 +58,10 @@ public class MainActivity extends AppCompatActivity {
 
             public void onFinish() {
                 timer_View.setText("END!");
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
-                alertDialogBuilder
-                        .setMessage("GAME OVER!\nP1: " + playerPoints)
-                        .setCancelable(false)
-                        .setPositiveButton("NEW", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(intent);
-                                finish();
+                alertDialog();
+                }
 
-                            }
-                        })
-                        .setNegativeButton("EXIT", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                finish();
-                            }
-                        });
-                AlertDialog alertDialog = alertDialogBuilder.create();
-                alertDialog.show();
-            }
+
         }.start();
 
 
@@ -139,6 +123,30 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void alertDialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Level3Activity.this);
+        alertDialogBuilder
+                .setMessage("GAME OVER!\nYou got " + playerPoints + " points")
+                .setCancelable(false)
+                .setPositiveButton("NEW", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getApplicationContext(), Level3Activity.class);
+                        startActivity(intent);
+                        finish();
+
+                    }
+                })
+                .setNegativeButton("EXIT", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+    }
+
     private void cardOnclick(){
         for (int i = 0; i < imageViewArrayList.size(); i++){
             final int c = i;
@@ -147,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     int theCard = Integer.parseInt((String) v.getTag());
                     ImageView iv = imageViewArrayList.get(c);
-                    doStuff(iv,theCard);
+                    setCardImage(iv,theCard);
                 }
             });
         }
@@ -160,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
         return enable;
     }
 
-    private void doStuff(ImageView iv, int card){
+    private void setCardImage(ImageView iv, int card){
         switch (cardArray[card]){
             case 101:
                 iv.setImageResource(image101);
@@ -321,22 +329,11 @@ public class MainActivity extends AppCompatActivity {
                 playerPoints++;
                 textViewp1.setText("Points:" + playerPoints);
             }
-//            }else if (turn == 2){
-//                cpuPoints++;
-//                textViewp2.setText("P2: " + cpuPoints);
-//            }
 
         }else {
             //setting Images to question Images
             setQuestionImages();
 
-//            if (turn == 1){
-//                turn = 2;
-//                textViewp1.setTextColor(Color.GRAY);
-//            }else if(turn == 2){
-//                turn = 1;
-//                textViewp1.setTextColor(Color.BLACK);
-//            }
         }
 
         //set Enable method
@@ -368,28 +365,7 @@ public class MainActivity extends AppCompatActivity {
                         questionImage33.getVisibility() == View.INVISIBLE &&
                         questionImage34.getVisibility() == View.INVISIBLE) {
             {
-
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
-                alertDialogBuilder
-                        .setMessage("GAME OVER!\nP1: " + playerPoints)
-                        .setCancelable(false)
-                        .setPositiveButton("NEW", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(intent);
-                                finish();
-
-                            }
-                        })
-                        .setNegativeButton("EXIT", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                finish();
-                            }
-                        });
-                AlertDialog alertDialog = alertDialogBuilder.create();
-                alertDialog.show();
+                alertDialog();
             }
         }
     }
