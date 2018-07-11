@@ -15,16 +15,16 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void level_1_onClick(View view) {
-//        Intent intent = new Intent(this,Level3Activity.class);
-//        intent.putExtra("Move",intent);
-//        startActivity(intent);
+        Intent intent = new Intent(this,MainGameActivity.class);
+        intent.putExtra(EXTRA_MESSAGE,20);
+        startActivity(intent);
     }
 
     public void level_2_onClick(View view) {
     }
 
     public void level_3_onClick(View view) {
-        Intent intent = new Intent(this,Level3Activity.class);
+        Intent intent = new Intent(this,MainGameActivity.class);
         intent.putExtra(EXTRA_MESSAGE,10);
         startActivity(intent);
     }

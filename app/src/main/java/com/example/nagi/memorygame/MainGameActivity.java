@@ -1,6 +1,5 @@
 package com.example.nagi.memorygame;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.CountDownTimer;
@@ -11,12 +10,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class Level3Activity extends AppCompatActivity {
+public class MainGameActivity extends AppCompatActivity {
 
     TextView textViewp1,timer_View;
     ImageView questionImage11,questionImage12,questionImage13,questionImage14,
@@ -41,7 +41,7 @@ public class Level3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.level_3);
+        setContentView(R.layout.main_game);
 
         Intent intent = getIntent();
         String value = intent.getStringExtra("Move");
@@ -58,7 +58,10 @@ public class Level3Activity extends AppCompatActivity {
 
             public void onFinish() {
                 timer_View.setText("END!");
-                alertDialog();
+                if (!isFinishing()){
+                    alertDialog();
+                }
+
                 }
 
 
@@ -124,14 +127,14 @@ public class Level3Activity extends AppCompatActivity {
     }
 
     private void alertDialog(){
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Level3Activity.this);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainGameActivity.this);
         alertDialogBuilder
                 .setMessage("GAME OVER!\nYou got " + playerPoints + " points")
                 .setCancelable(false)
                 .setPositiveButton("NEW", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(getApplicationContext(), Level3Activity.class);
+                        Intent intent = new Intent(getApplicationContext(), MainGameActivity.class);
                         startActivity(intent);
                         finish();
 
@@ -144,7 +147,8 @@ public class Level3Activity extends AppCompatActivity {
                     }
                 });
         AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
+        alertDialogBuilder.show();
+
     }
 
     private void cardOnclick(){
@@ -172,39 +176,51 @@ public class Level3Activity extends AppCompatActivity {
         switch (cardArray[card]){
             case 101:
                 iv.setImageResource(image101);
+                Toast.makeText(this,"Turkey",Toast.LENGTH_SHORT).show();
                 break;
             case 102:
                 iv.setImageResource(image102);
+                Toast.makeText(this,"Australia",Toast.LENGTH_SHORT).show();
                 break;
             case 103:
                 iv.setImageResource(image103);
+                Toast.makeText(this,"Tunisia",Toast.LENGTH_SHORT).show();
                 break;
             case 104:
                 iv.setImageResource(image104);
+                Toast.makeText(this,"Cameroon",Toast.LENGTH_SHORT).show();
                 break;
             case 105:
                 iv.setImageResource(image105);
+                Toast.makeText(this,"Senegal",Toast.LENGTH_SHORT).show();
                 break;
             case 106:
                 iv.setImageResource(image106);
+                Toast.makeText(this,"New Zealand",Toast.LENGTH_SHORT).show();
                 break;
             case 201:
                 iv.setImageResource(image201);
+                Toast.makeText(this,"Turkey",Toast.LENGTH_SHORT).show();
                 break;
             case 202:
                 iv.setImageResource(image202);
+                Toast.makeText(this,"Australia",Toast.LENGTH_SHORT).show();
                 break;
             case 203:
                 iv.setImageResource(image203);
+                Toast.makeText(this,"Tunisia",Toast.LENGTH_SHORT).show();
                 break;
             case 204:
                 iv.setImageResource(image204);
+                Toast.makeText(this,"Cameroon",Toast.LENGTH_SHORT).show();
                 break;
             case 205:
                 iv.setImageResource(image205);
+                Toast.makeText(this,"Senegal",Toast.LENGTH_SHORT).show();
                 break;
             case 206:
                 iv.setImageResource(image206);
+                Toast.makeText(this,"New Zealand",Toast.LENGTH_SHORT).show();
         }
 
         //check which image is selected and save it to temporary variable
@@ -235,7 +251,7 @@ public class Level3Activity extends AppCompatActivity {
                 //check if the selected images are equal
                 calculate();
             }
-        },1000);
+        },500);
 
     }
 

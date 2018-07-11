@@ -4,17 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#c52749"
     android:gravity="top|center"
     tools:context=".MenuActivity">
 
     <TextView
-        android:layout_width="244dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="82dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="72dp"
         android:text="Where to Travel ?"
-        android:textSize="30dp"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:fontFamily="serif-monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,42 +41,23 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="163dp"
         android:gravity="center"
-        android:text="Choose two flags which match each other and get travel points!"
+        android:text="Choose two flags which match each other and get travel points!\n You have 30 seconds."
+        android:textColor="@android:color/white"
         android:textSize="25dp"
+        app:fontFamily="serif-monospace"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="316dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/level2"
-        android:layout_marginStart="26dp"
-        android:onClick="level_1_onClick"
-        android:text="Level 1"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="411dp" />
 
     <Button
-        android:id="@+id/level2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="136dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="31dp"
-        android:text="Level 2"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="411dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="31dp"
-        android:layout_marginRight="26dp"
         android:onClick="level_3_onClick"
-        android:text="Level 3"
+        android:text="START"
+        android:background="#ffffff"
         tools:layout_editor_absoluteX="264dp"
         tools:layout_editor_absoluteY="411dp" />
 
